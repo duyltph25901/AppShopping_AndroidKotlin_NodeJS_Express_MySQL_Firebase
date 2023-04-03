@@ -1,0 +1,78 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hóa đơn khách hàng</title>
+    <link rel="stylesheet" href="/css/nav_vertical.css">
+    <link rel="stylesheet" href="/css/nav_horizontal.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+    <div class="nav">
+        <ul>
+            <li><a href="/admins">Admins</a></li>
+            <li><a class="active" href="/order">Hóa đơn</a></li>
+            <li><a href="/products">Sản phẩm</a></li>
+        </ul>
+    </div>
+    <div class="container-content">
+        <!-- <ul>
+            <li><a class="active" href="/admins">Admin & Boss</a></li>
+            <li><a href="/users">Users</a></li>
+        </ul> -->
+        <br>
+        <div class="w3-container">
+            <table class="w3-table-all w3-hoverable">
+                <thead>
+                    <tr class="w3-light-grey">
+                        <th>#</th>
+                        <th>Thời gian</th>
+                        <th>Trạng thái đơn hàng</th>
+                        <th>Phương thức thanh toán</th>
+                        <th>Hoạt động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%for(let i=0; i<data.length; ++i) {%>
+                        <tr>
+                            <td>
+                                <%=(i+1)%>
+                            </td>
+                            <td>
+                                <%=data[i].dateTime%>
+                            </td>
+                            <td>
+                                <p>
+                                    <%=(data[i].shippingStatus==-1 ? 'Chờ xác nhận' : ( data[i].shippingStatus==1
+                                        ? 'Đã nhận hàng' : 'Đang giao' ) )%>
+                                </p>
+                            </td>
+                            <td>
+                                <%=data[i].paymentStatus==-1 ? 'COD' : 'BANK' %>
+                            </td>
+                            <td style="
+                            display: flex;
+                        ">
+                                <a href="/details/order/<%=data[i].id%>" target="_blank">
+                                    <button class="button-element">Chi tiết</button>
+                                </a>
+                                <form action="/confirm-order" method="post">
+                                    <input type="number" name="shippingStatus" value="<%=data[i].shippingStatus%>"
+                                        hidden>
+                                    <input type="text" name="id" value="<%=data[i].id%>" hidden>
+                                    <button class="button-element" type="submit">Xác nhận</button>
+                                </form>
+                            </td>
+                        </tr>
+                        <%}%>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</body>
+
+</html>

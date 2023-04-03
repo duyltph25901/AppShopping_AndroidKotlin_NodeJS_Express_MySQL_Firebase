@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cập nhật admin/boss</title>
+    <link rel="stylesheet" href="/css/nav_vertical.css">
+    <link rel="stylesheet" href="/css/form_update_admin">
+    <link rel="stylesheet" href="/css/nav_horizontal.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+    <div class="nav">
+        <ul>
+            <li><a class="active" href="/admins">Admins</a></li>
+            <li><a href="/order">Hóa đơn</a></li>
+            <li><a href="/products">Sản phẩm</a></li>
+        </ul>
+    </div>
+    <div class="container-content">
+        <ul>
+            <li><a href="/admins">Admin & Boss</a></li>
+            <li><a href="/users">Người dùng</a></li>
+            <li><a class="active" href="/update-admin/<%=data.id%>">Cập nhật</a></li>
+        </ul>
+        <br>
+
+        <div class="form-container">
+            <h1>Cập nhật thông tin</h1>
+            <form action="/handle-update-admin" method="POST" enctype="multipart/form-data">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Email..." value="<%=data.email%>" />
+
+                <label for="password">Mật khẩu:</label>
+                <input type="password" id="password" name="password" placeholder="Password..."
+                    value="<%=data.password%>" />
+
+                <label for="phone">Số điện thoại:</label>
+                <input type="tel" id="phone" name="phoneNumber" placeholder="Phone Number..."
+                    value="<%=data.phoneNumber%>" />
+
+                <label for="avatar">Avatar:</label>
+                <input type="file" id="avatar" name="pic_admin_update" accept="image/*" />
+
+                <input value="<%=data.id%>" name="id" hidden />
+                <input value="<%=data.isBoss%>" name="isBoss" hidden />
+
+                <input type="submit" value="Lưu" />
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

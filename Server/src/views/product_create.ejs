@@ -1,0 +1,78 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thêm sản phẩm</title>
+    <link rel="stylesheet" href="/css/nav_vertical.css">
+    <link rel="stylesheet" href="/css/nav_horizontal.css">
+    <link rel="stylesheet" href="/css/form_create_product.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+    <div class="nav">
+        <ul>
+            <li><a href="/admins">Admins</a></li>
+            <li><a href="/order">Hóa đơn</a></li>
+            <li><a class="active" href="/products">Sản phẩm</a></li>
+        </ul>
+    </div>
+
+    <div class="container-content">
+        <ul>
+            <li><a href="/products">Tất cả</a></li>
+            <li><a href="/gaming">Gaming</a></li>
+            <li><a href="/ultrabook">Ultrabook</a></li>
+            <li><a href="/macbook">Macbook</a></li>
+            <li><a class="active" href="/create-product">Thêm sản phẩm</a></li>
+        </ul>
+        <form action="/handle-create-product" method="post" enctype="multipart/form-data">
+            <div>
+                <label for="product_name">Tên sản phẩm:</label>
+                <input type="text" id="product_name" name="productName" required autocomplete="off">
+            </div>
+            <div>
+                <label for="price">Giá bán:</label>
+                <input type="number" id="price" name="price" min="0" step="0.01" required>
+            </div>
+            <div>
+                <label for="price">Giảm giá:</label>
+                <input type="number" id="discount" name="discount" min="0" step="0.01" required>
+            </div>
+            <div>
+                <label for="description">Mô tả:</label>
+                <textarea id="description" name="description" required></textarea>
+            </div>
+            <div>
+                <label for="image">Hình ảnh:</label>
+                <input type="file" id="image" name="pic_product" accept="image/*">
+            </div>
+            <div>
+                <label for="quantity">Số lượng:</label>
+                <input type="number" id="quantity" name="quantity" min="0" required>
+            </div>
+            <div>
+                <label for="quantity">Link Video:</label>
+                <input type="url" id="quantity" name="linkVideo" min="0" required autocomplete="off">
+            </div>
+            <div>
+                <label for="category">Thể loại:</label>
+                <select id="category" name="category">
+                    <option value="macbook">Macbook</option>
+                    <option value="gaming">Gaming</option>
+                    <option value="ultrabook">Ultrabook</option>
+                </select>
+            </div>
+            <div>
+                <button type="submit">Thêm</button>
+            </div>
+        </form>
+    </div>
+
+
+
+</body>
+
+</html>

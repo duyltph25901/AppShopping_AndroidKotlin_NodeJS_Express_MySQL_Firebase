@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Đăng nhập</h2>
+        <form method="post" action="/handle-login">
+            <label for="username">Email:</label>
+            <input type="text" id="email" name="email" required autocomplete="off">
+            <label for="password">Mật khẩu:</label>
+            <input type="password" id="password" name="password" required autocomplete="off">
+            <input type="submit" value="Đăng nhập">
+        </form>
+        <div class="footer">
+            <p>Bạn không có tài khoản? </p>
+            <a href="/get-form-register">Đăng kí</a>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f5f5;
+}
+
+h1 {
+    color: #1e6a51;
+}
+
+.product {
+    background-color: #fff;
+    box-shadow: 0px 0px 10px #ddd;
+    padding: 20px;
+    margin: 50px auto;
+    max-width: 800px;
+    border-radius: 30px;
+}
+
+.containerImage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.product .containerImage img {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 20px;
+}
+
+.product h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.product p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.product .price {
+    color: #1e6a51;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.product .stock {
+    color: #888;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.product .comment {
+    margin-top: 50px;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.product .comment h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.product .comment p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.product .comment form {
+    margin-top: 20px;
+}
+
+.product .comment form label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.product .comment form input[type="text"],
+.product .comment form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.product .comment form input[type="submit"] {
+    background-color: #1e6a51;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.product .comment .author {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.product .comment .date {
+    font-size: 14px;
+    color: #888;
+}
+
+.containerId {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    text-align: end;
+}

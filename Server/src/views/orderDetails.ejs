@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chi tiết hóa đơn</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f8f9;
+        }
+
+        h1 {
+            color: #04AA6D;
+            text-align: center;
+        }
+
+        table {
+            margin: auto;
+            border-collapse: collapse;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            width: 100%;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #04AA6D;
+            color: #fff;
+        }
+
+        .product-image {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            margin-right: 12px;
+        }
+
+        .product-name {
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        .total {
+            font-weight: bold;
+        }
+
+        img {
+            height: 50xp;
+            width: 50px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Chi tiết hóa đơn</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Mã hóa đơn</th>
+                <th>Mã khách hàng</th>
+                <th>Số điện thoại</th>
+                <th>Địa chỉ nhận hàng</th>
+                <th>Phương thức thanh toán</th>
+                <th>Thời gian đặt hàng</th>
+                <th>Trạng thái đơn hàng</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <%=idOrder%>
+                </td>
+                <td>
+                    <%=infoUser.id%>
+                </td>
+                <td>
+                    <%=infoUser.phoneNumber%>
+                </td>
+                <td>
+                    <%=infoUser.address%>
+                </td>
+                <td><%=infoUser.paymentStatus==-1 ? 'COD' : 'BANK' %></td>
+                <td>
+                    <%=infoUser.dateTime%>
+                </td>
+                <td>
+                    <%=(infoUser.shippingStatus==-1 ? 'Chờ xác nhận' : ( infoUser.shippingStatus==1 ? 'Đã giao hàng'
+                        : 'Đang giao' ) )%>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>Hình ảnh</th>
+                <th>Tên sản phẩm</th>
+                <th>Giá</th>
+                <th>Triết khấu</th>
+                <th>Số lượng</th>
+                <th>Thành tiền</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr>
+                <td><img class="product-image" src="https://via.placeholder.com/50x50" alt="Product image"></td>
+                <td class="product-name">Sản phẩm 1</td>
+                <td>100,000đ</td>
+                <td>1</td>
+                <td>100,000đ</td>
+            </tr> -->
+            <%for(let i=0; i<products.length; i++) {%>
+                <tr>
+                    <td>
+                        <img src="<%=products[i].image%>" alt="">
+                    </td>
+                    <td>
+                        <%=products[i].name%>
+                    </td>
+                    <td>
+                        <%=products[i].price%>$
+                    </td>
+                    <td>
+                        <%=products[i].discount%>%
+                    </td>
+                    <td>
+                        <%=products[i].productQuantity%>
+                    </td>
+                    <td>
+                        <%=(products[i].price * products[i].productQuantity)%>$
+                    </td>
+                </tr>
+                <%}%>
+                    <tr>
+                        <td colspan="4" class="total">Tổng tiền</td>
+                        <td class="total">
+                            <%=priceSum%>$
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

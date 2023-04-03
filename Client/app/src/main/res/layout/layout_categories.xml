@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/_7sdp"
+    android:background="@drawable/bg_container_tab_category"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_marginStart="@dimen/_12sdp"
+    android:id="@+id/itemCategory">
+
+    <TextView
+        android:id="@+id/textCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Macbook"
+        android:textSize="@dimen/_14ssp"
+        android:textStyle="bold"
+        android:textColor="@color/color_text_primary"/>
+
+</LinearLayout>

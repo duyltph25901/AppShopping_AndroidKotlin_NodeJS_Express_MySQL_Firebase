@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng kí</title>
+    <link rel="stylesheet" href="/css/register.css">
+</head>
+
+<body>
+    <div id="register-form">
+        <h1>Đăng kí</h1>
+        <form action="/handle-register" method="POST" enctype="multipart/form-data">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required autocomplete="off"><br>
+
+            <label for="password">Mật khẩu:</label>
+            <input type="password" id="password" name="password" required><br>
+
+            <label for="phone">Số điện thoại:</label>
+            <input type="tel" id="phone" name="phoneNumber" required autocomplete="off"><br>
+
+            <input name="isBoss" value="0" hidden required><br>
+
+            <div>
+                <input type="file" name="pic_admin" accept="image/*" required />
+            </div>
+
+            <div class="containerButton">
+                <input type="submit" value="Đăng ký">
+            </div>
+
+            <div class="footer">
+                <p>Bạn đã có tài khoản?</p>
+                <a href="/">Đăng nhập</a>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

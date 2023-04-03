@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "391527136270",
+    "project_id": "app-lap-top-kotlin",
+    "storage_bucket": "app-lap-top-kotlin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:391527136270:android:39d44cad1b9bf9542a105f",
+        "android_client_info": {
+          "package_name": "com.example.laptop_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "391527136270-99u7l2equedjrru2nfvoiti6gkksr95i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDl9j0DjYQIaTvF4pRXPKfqf0zOS7THfLg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "391527136270-99u7l2equedjrru2nfvoiti6gkksr95i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

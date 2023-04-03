@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết người dùng</title>
+    <link rel="stylesheet" href="/css/nav_vertical.css">
+    <link rel="stylesheet" href="/css/form_update_admin">
+    <link rel="stylesheet" href="/css/nav_horizontal.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="/css/form_update_user.css">
+</head>
+
+<body>
+    <div class="nav">
+        <ul>
+            <li><a class="active" href="/admins">Admins</a></li>
+            <li><a href="/order">Hóa đơn</a></li>
+            <li><a href="/products">Sản phẩm</a></li>
+        </ul>
+    </div>
+    <div class="container-content">
+        <ul>
+            <li><a href="/admins">Admin & Boss</a></li>
+            <li><a href="/users">Người dùng</a></li>
+            <li><a class="active" href="/update-user/<%=data.id%>">Cập nhật người dùng</a></li>
+        </ul>
+        <br>
+
+        <div class="form-container">
+            <h1>Cập nhật thôn tin người dùng</h1>
+            <form action="/handle-update-user" method="post" enctype="multipart/form-data">
+                <label>Email</label>
+                <input type="email" name="email" required value="<%=data.email%>">
+                <label>Tên người dùng</label>
+                <input type="text" name="userName" required value="<%=data.userName%>">
+                <label>Mật khẩu</label>
+                <input type="password" name="password" required value="<%=data.password%>">
+                <label>Số điện thoại</label>
+                <input type="tel" name="phoneNumber" required value="<%=data.phoneNumber%>">
+                <label>Địa chỉ</label>
+                <input type="text" name="address" rows="4" value="<%=data.address%>" />
+                <label>Avatar</label>
+                <input type="file" name="pic_user_update" accept="image/*">
+                <input value="<%=data.id%>" name="id" hidden />
+                <input value="<%=data.idOrder%>" name="idOrder" hidden />
+                <input value="<%=data.idCart%>" name="idCart" hidden />
+                <input value="<%=data.idComment%>" name="idComment" hidden />
+                <button class="btn" type="submit">Cập nhật</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

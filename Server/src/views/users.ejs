@@ -1,0 +1,79 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách người dùng</title>
+    <link rel="stylesheet" href="/css/nav_vertical.css">
+    <link rel="stylesheet" href="/css/nav_horizontal.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+    <div class="nav">
+        <ul>
+            <li><a class="active" href="/admins">Admins</a></li>
+            <li><a href="/order">Hóa đơn</a></li>
+            <li><a href="/products">Sản phẩm</a></li>
+        </ul>
+    </div>
+    <div class="container-content">
+        <ul>
+            <li><a href="/admins">Admin & Boss</a></li>
+            <li><a class="active" href="/users">Người dùng</a></li>
+        </ul>
+        <br>
+        <div class="w3-container">
+            <table class="w3-table-all w3-hoverable">
+                <thead>
+                    <tr class="w3-light-grey">
+                        <th>#</th>
+                        <th>Hình ảnh</th>
+                        <th>Tên người dùng</th>
+                        <th>Email</th>
+                        <th>Hoạt động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%for(let i=0; i<data.length; i++) {%>
+                        <tr>
+                            <td>
+                                <%=(i+1)%>
+                            </td>
+                            <td>
+                                <img src="<%=data[i].image%>" style="
+                                    width: 120px;
+                                    height: 120px;
+                                    border-radius: 21px;
+                                " />
+                            </td>
+                            <td>
+                                <%=data[i].userName%>
+                            </td>
+                            <td>
+                                <%=data[i].email%>
+                            </td>
+                            <td style="
+                            display: flex;
+                        ">
+                                <a href="/details/user/<%=data[i].id%>" target="_blank">
+                                    <button class="button-element">Chi tiết</button>
+                                </a>
+                                <form action="/update-user/<%=data[i].id%>" method="get">
+                                    <button class="button-element">Sửa</button>
+                                </form>
+                                <form action="handle-delete-user" method="post">
+                                    <input value="<%=data[i].id%>" hidden name="id" />
+                                    <button class="button-element" id="deleteBtn">Xóa</button>
+                                </form>
+                            </td>
+                        </tr>
+                        <%}%>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
